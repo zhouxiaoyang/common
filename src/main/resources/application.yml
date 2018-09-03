@@ -1,0 +1,63 @@
+# default DB properties:
+spring:
+  redis:
+    port: 6379
+    host: 127.0.0.1
+  datasource:
+    allowMultiQueries: true
+    default:
+      url: jdbc:mysql://localhost:3306/master?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: common-dao
+  jackson:
+        time-zone: GMT+8
+        date-format: yyyy-MM-dd HH:mm:ss
+server:
+  port: 80
+  servlet:
+    context-path: /common
+redis:
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:eureka@192.168.119.215:8761/eureka/
+
+#mybatis-plus配置项
+#mybatis-plus:
+#  mapper-locations: classpath:/mapper/*Mapper.xml
+#  #实体扫描，多个package用逗号或者分号分隔
+#  typeAliasesPackage: com.dzqd.comondao.entity
+##  typeEnumsPackage: com.dzqd.comondao.entity.enums
+#  global-config:
+#    # 数据库相关配置
+#    db-config:
+#      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+#      id-type: auto
+#      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+#      field-strategy: ignored
+#      #驼峰下划线转换
+#      column-underline: true
+#      #数据库大写下划线转换
+#      #capital-mode: true
+#      #逻辑删除配置
+#      logic-delete-value: 0
+#      logic-not-delete-value: 1
+#      db-type: mysql
+#    #刷新mapper 调试神器
+##    refresh: true
+#  # 原生配置
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    cache-enabled: false
+
+#mybatis:
+#      configuration:
+#          map-underscore-to-camel-case: true
+#      mapper-locations: mapper/*Mapper.xml
+
+
+
